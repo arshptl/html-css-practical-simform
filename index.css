@@ -1,0 +1,142 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+:root {
+  --main-color: #4074f0;
+  --background-color: #f1f3f6;
+  --font-color: #212121;
+  --backgroundDiv-color: white;
+}
+
+a,
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  font-size: 14px;
+  color: #212121;
+  /* line-height: 1.4; */
+  font-family: Roboto, Arial, sans-serif;
+  background-color: var(--background-color);
+}
+
+.navBar {
+  width: 100%;
+  background-color: var(--main-color);
+  height: 55px;
+}
+
+.navDiv {
+  display: flex;
+  max-width: 1248px;
+  width: 100%;
+  margin: auto;
+  height: 100%;
+  align-items: center;
+  position: relative;
+  left: 61px;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: fit-content;
+  color: #f0f0f0;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 10px;
+}
+
+.searchDiv {
+  min-width: 304px;
+  width: calc(100% - 540px);
+}
+
+.searchBar {
+  display: flex;
+  max-width: 564px;
+  width: 100%;
+  margin-left: 10px;
+  box-shadow: 0 2px 4px 0 rgb(0, 0, 0 /23%);
+}
+
+.searchInput {
+  outline: none;
+  padding: 0 16px;
+  border-radius: 2px 0 0 2px;
+  border: 0;
+  width: 100%;
+  height: 36px;
+}
+
+.searchButton {
+  background: var(--backgroundDiv-color);
+  border: 1px solid white;
+  padding: 4px 12px 4px 8px;
+  width: 44px;
+  height: 36px;
+  cursor: pointer;
+  border-radius: 0 2px 2px 0;
+  color: var(--main-color);
+  font-size: 19px;
+}
+
+.categoryDiv {
+  display: flex;
+  width: 100%;
+  background: var(--backgroundDiv-color);
+  justify-content: center;
+  min-height: 112px;
+  border-bottom: 2px solid lightgray;
+}
+
+.firstDiv {
+  display: flex;
+  justify-content: space-between;
+  width: 88%;
+  margin: 15px auto;
+}
+
+.dealsDiv {
+  display: flex;
+  flex-direction: column;
+  width: 87%;
+  min-height: 300px;
+  background: var(--backgroundDiv-color);
+  box-shadow: 0 2px 4px 0 rgb(0 0 0 / 8%);
+}
+
+.adBanner {
+  width: 12.5%;
+}
+
+.secondDiv {
+  display: flex;
+  flex-direction: column;
+  background: var(--backgroundDiv-color);
+  min-height: 400px;
+  box-shadow: 0 2px 4px 0 rgb(0 0 0 / 8%);
+}
+
+h2 {
+  font-size: 22px;
+  line-height: 32px;
+  display: inline-block;
+  font-weight: 550;
+  color: var(--font-color);
+}
+
+.headingDiv {
+  display: flex;
+  flex-direction: column;
+  color: #b9bbc0;
+  padding: 15px 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
