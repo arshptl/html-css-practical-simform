@@ -43,18 +43,35 @@ body {
 .navBar {
   width: 100%;
   background-color: var(--main-color);
-  height: 55px;
+  height: 120px;
 }
 
 .navDiv {
   display: flex;
   max-width: 1248px;
   width: 100%;
+  padding: 0 30px;
   margin: 0 auto;
   height: 100%;
   align-items: center;
-  position: relative;
-  left: 61px;
+  flex-wrap: wrap;
+}
+
+.pcNav {
+  display: none;
+}
+
+.mobileNav {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.mobileOptions {
+  display: flex;
+  gap: 20px;
 }
 
 .logo {
@@ -69,15 +86,12 @@ body {
 }
 
 .searchDiv {
-  min-width: 304px;
-  width: calc(100% - 540px);
+  width: 100%;
 }
 
 .searchBar {
   display: flex;
-  max-width: 564px;
   width: 100%;
-  margin-left: 10px;
   box-shadow: 0 2px 4px 0 rgb(0, 0, 0 /23%);
 }
 
@@ -102,42 +116,29 @@ body {
   font-size: 19px;
 }
 
-
-.login{
-  position: relative; 
-  left: 45px;
-}
-
-.login_btn{
+.login_btn {
   color: var(--main-color) !important;
   border-radius: 2px;
   border: 1px solid #dbdbdb;
   background: white;
   letter-spacing: 1px;
   height: 32px;
-  padding: 6px 40px;
+  padding: 6px 20px;
   font-weight: bold;
-  margin: 0px 20px;
+  /* margin: 0px 20px; */
   cursor: pointer;
   text-decoration: none;
   font-size: 16px;
 }
 
-
-.more, .cart{
-  position: relative;
-  left: 45px;
-}
-
-.more_lan, .cart_lan{
+.more_lan,
+.cart_lan {
   color: white;
   font-weight: bold;
-  margin: 0px 20px;
+  /* margin: 0px 10px; */
   cursor: pointer;
   font-size: 16px;
 }
-
-
 
 /* Category styles */
 .categoryDiv {
@@ -158,6 +159,7 @@ body {
   -ms-overflow-style: none;
   scrollbar-width: none;
   /* flex-wrap: wrap; */
+  padding: 0 30px;
   max-height: 100%;
 }
 
@@ -178,13 +180,12 @@ body {
   height: 65px;
 }
 
-
 .catTitle {
   font-weight: 600;
   font-size: 13px;
 }
 
-.catItem:hover{
+.catItem:hover {
   color: var(--main-color);
 }
 
@@ -213,12 +214,12 @@ body {
   max-height: 100%;
 }
 
-.dealsItemsDiv{
+.dealsItemsDiv {
   gap: 40px;
   padding: 25px;
 }
 
-.dealsItem{
+.dealsItem {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -226,31 +227,30 @@ body {
   cursor: pointer;
 }
 
-.dealsIteamImage{
+.dealsIteamImage {
   width: 150px;
   height: 150px;
 }
 
-.dealsItem:hover{
+.dealsItem:hover {
   transform: scale(1.03);
 }
 
-.dealContentText{
+.dealContentText {
   color: var(--offer-color);
   margin-top: 10px;
   text-align: center;
 }
 
-.dealTitle{
+.dealTitle {
   margin-top: 10px;
   font-size: 14px;
 }
 
-.dealContentDesc{
+.dealContentDesc {
   color: var(--descfont-color);
   font-weight: 200;
 }
-
 
 /* Body items Div(second) styles */
 
@@ -296,4 +296,55 @@ h2 {
   box-shadow: 1px 2px 0 rgb(0 0 0 / 10%);
   font-size: 12px;
   font-weight: 600;
+}
+
+@media (min-width: 800px) {
+  .navBar {
+    height: 55px;
+  }
+
+  .mobileNav {
+    display: none;
+  }
+
+  .pcNav {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+  }
+  .navDiv {
+    padding: 0;
+  }
+
+  .searchDiv {
+    min-width: 304px;
+    width: calc(100% - 540px);
+  }
+
+  .searchBar {
+    max-width: 564px;
+    margin-left: 10px;
+  }
+
+  .login {
+    position: relative;
+    left: 45px;
+  }
+
+  .login_btn {
+    padding: 6px 40px;
+    margin: 0px 20px;
+  }
+
+  .more,
+  .cart {
+    position: relative;
+    left: 45px;
+  }
+
+  .more_lan,
+  .cart_lan {
+    margin: 0px 20px;
+  }
 }
