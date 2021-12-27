@@ -84,6 +84,24 @@
                     <!-- Login button -->
                     <div class="login">
                         <a href="/index.html" class="login_btn">Login</a>
+                        <div class="login_dropdown">
+                            <div class="pointer login_pointer"></div>
+
+                            <ul class="login_dropdown_list">
+                                <li class="login_drop_li sign_li">
+                                    <p class="new_login">New customer</p>
+                                    <a href="/" class="sign_up">
+                                        Sign Up
+                                    </a>
+                                </li>
+                                <li class="login_drop_li">My Profile</li>
+                                <li class="login_drop_li">Flipkart Plus zone</li>
+                                <li class="login_drop_li">Orders</li>
+                                <li class="login_drop_li">Wishlist</li>
+                                <li class="login_drop_li">Rewards</li>
+                                <li class="login_drop_li">Gift Cards</li>
+                            </ul>
+                        </div>
                     </div>
 
                     <!-- More button -->
@@ -91,6 +109,42 @@
                         <span class="more_lan">More
                         <i class="fa fa-angle-down"></i>
                         </span>
+                        <div class="more_dropdown">
+                            <div class="pointer more_pointer"></div>
+                            <ul class="more_dropdown_list">
+                                <li class="more_drop_li">
+                                    <i class="more_icon fa fa-bell">
+                                    </i>
+                                    Notification Preferences
+
+                                </li>
+                                <li class="more_drop_li">
+                                    <i class="more_icon fa fa-shopping-basket">
+                                    </i>
+                                    Sell on Flipkart
+
+                                </li>
+                                <li class="more_drop_li">
+                                    <i class="more_icon fa fa-question">
+                                    </i>
+                                    24X7 Customer Care
+
+                                </li>
+                                <li class="more_drop_li">
+                                    <i class="more_icon fa fa-line-chart">
+                                    </i>
+                                    Advertise
+
+                                </li>
+                                <li class="more_drop_li">
+                                    <i class="more_icon fa fa-download">
+                                    </i>
+                                    Download App
+
+                                </li>
+
+                            </ul>
+                        </div>
                     </div>
 
                     <!-- Cart button -->
@@ -153,19 +207,22 @@
     <div class="firstDiv">
         <div class="dealsDiv">
             <div class="headingDiv">
-                <div style="display: flex; align-items: center;">
+                <div class="timeDiv">
                     <h2>Deals of the Day</h2>
+                    <div style="display: flex; align-items: center;">
                     <div class="clock">
                         <img src="static/svg/clock.svg" alt="clock" height="24px" width="24px">
                     </div>
                     <div>22: 07: 36 Left</div>
+                    </div>
+                    
                 </div>
           
                 <div class="viewAllButton">
                     VIEW ALL
                 </div>
             </div>
-
+            <div style="position: relative;">
                 <ul class="catDivUL dealsItemsDiv">
                     <li class="dealsItem">
                         <img src="static/images/deals/shoe.jpeg" alt="">
@@ -210,18 +267,24 @@
                        <p class="dealContentText dealContentDesc">Casual Shoes For Men's</p>
                     </li>
                 </ul>
+
+                <div class="nextButton">
+                    <i class="fa fa-arrow-right"></i>
+                </div>
+            </div>
+
+                
         </div>
-        <div class="adBanner dealsDiv">
-            
+        <div class="adBanner">
             <img style="width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: fill;
             overflow: hidden;" src="static/images/flipkartAd.jpg" alt="">
         </div>
     </div>
 
 
-    <div class="firstDiv secondDiv">
+    <div class="secondDiv">
         <div class="headingDiv">
             <div style="display: flex; flex-direction: column;">
                 <h2>Trending Offers</h2>
