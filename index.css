@@ -43,18 +43,35 @@ body {
 .navBar {
   width: 100%;
   background-color: var(--main-color);
-  height: 55px;
+  height: 120px;
 }
 
 .navDiv {
   display: flex;
   max-width: 1248px;
   width: 100%;
+  padding: 0 30px;
   margin: 0 auto;
   height: 100%;
   align-items: center;
-  position: relative;
-  left: 61px;
+  flex-wrap: wrap;
+}
+
+.pcNav {
+  display: none;
+}
+
+.mobileNav {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.mobileOptions {
+  display: flex;
+  gap: 20px;
 }
 
 .logo {
@@ -69,15 +86,12 @@ body {
 }
 
 .searchDiv {
-  min-width: 304px;
-  width: calc(100% - 540px);
+  width: 100%;
 }
 
 .searchBar {
   display: flex;
-  max-width: 564px;
   width: 100%;
-  margin-left: 10px;
   box-shadow: 0 2px 4px 0 rgb(0, 0, 0 /23%);
 }
 
@@ -102,42 +116,134 @@ body {
   font-size: 19px;
 }
 
-
-.login{
-  position: relative; 
-  left: 45px;
-}
-
-.login_btn{
+.login_btn {
   color: var(--main-color) !important;
   border-radius: 2px;
   border: 1px solid #dbdbdb;
   background: white;
   letter-spacing: 1px;
   height: 32px;
-  padding: 6px 40px;
+  padding: 6px 20px;
   font-weight: bold;
-  margin: 0px 20px;
+  /* margin: 0px 20px; */
   cursor: pointer;
   text-decoration: none;
   font-size: 16px;
 }
 
-
-.more, .cart{
-  position: relative;
-  left: 45px;
-}
-
-.more_lan, .cart_lan{
+.more_lan,
+.cart_lan {
   color: white;
   font-weight: bold;
-  margin: 0px 20px;
+  /* margin: 0px 10px; */
   cursor: pointer;
   font-size: 16px;
 }
 
+.login_dropdown, .more_dropdown{
+  position: relative;
+  top: 18px;
+  display: none;
+  z-index: 1;
+}
 
+.more_dropdown{
+  right: 40px;
+}
+
+.login_dropdown_list , .more_dropdown_list{
+  position: absolute;
+  list-style: none;
+  background-color: white;
+  width: max-content;
+  box-shadow: 0 4px 16px 0 rgb(0, 0, 0 /20%);
+  min-width: 240px;
+  transform: translate(-30px);
+}
+
+.login_drop_li, .more_drop_li{
+  padding: 16px 20px;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.login_drop_li:last-child, .more_drop_li:last-child{
+  border-bottom: none;
+}
+
+.login_drop_li:first-child{
+  padding: 20px;
+}
+
+.login_drop_li:first-child:hover{
+  background: white;
+}
+
+.login_drop_li:hover, .more_drop_li:hover{
+  background: #f7f7f7;
+}
+
+.new_login{
+  font-weight: bold;  
+}
+
+.sign_li{
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+.sign_up{
+  text-decoration: none;
+  color: var(--main-color);
+}
+
+.more:hover .more_lan{
+  position: relative; 
+  /* top: 10px; */
+}
+
+/* .more_pointer{
+  left: 80%;
+} */
+
+.more_pointer{
+  height: 16px;
+  width: 16px;
+  background-color: white;  
+  position: absolute;
+
+  left: 90%;
+  top:0;
+  border-left: 1px solid rgb(0, 0, 0, 0.3);
+  border-top: 1px solid rgb(0, 0, 0, 0.3);
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.login_pointer {
+  height: 16px;
+  width: 16px;
+  background-color: white;  
+  position: absolute;
+
+  /* left: 90%; */
+  top:0;
+  border-left: 1px solid rgb(0, 0, 0, 0.3);
+  border-top: 1px solid rgb(0, 0, 0, 0.3);
+  transform: translate(-50%, -50%) rotate(45deg);
+ left: 50%;
+}
+
+
+.more_icon{
+  width: 25px;
+  color: var(--main-color);
+}
+
+.login:hover .login_dropdown, .more:hover .more_dropdown{
+  display: block;
+}
 
 /* Category styles */
 .categoryDiv {
@@ -151,18 +257,22 @@ body {
 
 .catDivUL {
   display: flex;
+
   /* justify-content: center; */
   align-items: center;
   gap: 75px;
   overflow: scroll;
   -ms-overflow-style: none;
   scrollbar-width: none;
+  overflow-y: hidden;
   /* flex-wrap: wrap; */
+  padding: 0 30px;
   max-height: 100%;
 }
 
 .catDivUL::-webkit-scrollbar {
-  display: none; /* for Chrome, Safari, and Opera */
+  display: none;
+   /* for Chrome, Safari, and Opera */
 }
 
 .catItem {
@@ -178,19 +288,19 @@ body {
   height: 65px;
 }
 
-
 .catTitle {
   font-weight: 600;
   font-size: 13px;
 }
 
-.catItem:hover{
+.catItem:hover {
   color: var(--main-color);
 }
 
 /* Body Items Div(first) Styles */
 .firstDiv {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   width: 88%;
   /* min-width: 1660px; */
@@ -201,7 +311,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  width: 87%;
+  width: 100%;
   /* min-height: 300px; */
   background: var(--backgroundDiv-color);
   box-shadow: 0 2px 4px 0 rgb(0 0 0 / 8%);
@@ -209,52 +319,71 @@ body {
 
 .adBanner {
   display: flex;
-  width: 12.5%;
-  max-height: 100%;
+  width: 100%;
+  margin-top: 15px;
+  /* max-height: 100%; */
 }
 
-.dealsItemsDiv{
+.dealsItemsDiv {
+  /* position: relative; */
   gap: 40px;
   padding: 25px;
 }
 
-.dealsItem{
+.nextButton {
+  position: absolute;
+  border-radius: 4px 0 0 4px;
+  right: 0;
+  bottom: 50%;
+  align-self: center;
+  pointer-events: auto;
+  padding: 40px 15px;
+  box-shadow: 1px 2px 10px -1px rgb(0 0 0 / 30%);
+  background-color: hsla(0, 0%, 100%, 0.98);
+  cursor: pointer;
+}
+
+.dealsItem {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  text-align: center;
 }
 
-.dealsIteamImage{
+.dealsIteamImage {
   width: 150px;
   height: 150px;
 }
 
-.dealsItem:hover{
+.dealsItem:hover {
   transform: scale(1.03);
 }
 
-.dealContentText{
+.dealContentText {
   color: var(--offer-color);
   margin-top: 10px;
   text-align: center;
 }
 
-.dealTitle{
+.dealTitle {
   margin-top: 10px;
   font-size: 14px;
 }
 
-.dealContentDesc{
+.dealContentDesc {
   color: var(--descfont-color);
   font-weight: 200;
 }
 
-
 /* Body items Div(second) styles */
 
 .secondDiv {
+  justify-content: space-between;
+  width: 88%;
+  /* min-width: 1660px; */
+  margin: 15px auto;
   display: flex;
   flex-direction: column;
   background: var(--backgroundDiv-color);
@@ -272,6 +401,7 @@ h2 {
 
 .headingDiv {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   color: #b9bbc0;
@@ -280,8 +410,8 @@ h2 {
 }
 
 .clock {
-  margin-left: 20px;
-  margin-right: 20px;
+  /* margin-left: 20px; */
+  margin-right: 10px;
   display: flex;
 }
 
@@ -296,4 +426,153 @@ h2 {
   box-shadow: 1px 2px 0 rgb(0 0 0 / 10%);
   font-size: 12px;
   font-weight: 600;
+}
+
+@media (min-width: 800px) {
+  .navBar {
+    height: 55px;
+  }
+
+  .mobileNav {
+    display: none;
+  }
+
+  .pcNav {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+  }
+  .navDiv {
+    padding: 0;
+  }
+
+  .searchDiv {
+    min-width: 304px;
+    width: calc(100% - 540px);
+  }
+
+  .searchBar {
+    max-width: 564px;
+    margin-left: 10px;
+  }
+
+  .login {
+    position: relative;
+    left: 45px;
+  }
+
+  .login_btn {
+    padding: 6px 40px;
+    margin: 0px 20px;
+  }
+
+  .more,
+  .cart {
+    position: relative;
+    left: 45px;
+  }
+
+  .more_lan,
+  .cart_lan {
+    margin: 0px 20px;
+  }
+
+
+  /* Div style */
+  .firstDiv {
+    flex-direction: row;
+    width: 96%;
+  }
+
+  .secondDiv {
+    width: 96%;
+    /* flex-direction: column; */
+  }
+
+  .dealsDiv {
+    justify-content: flex-start;
+    width: 73%;
+  }
+
+  .timeDiv {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .adBanner {
+    width: 25%;
+    margin-top: 0px;
+  }
+
+  .dealsItemsDiv {
+    gap: 40px;
+    padding: 25px;
+  }
+
+  .dealsItem {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .dealsIteamImage {
+    width: 150px;
+    height: 150px;
+  }
+
+  .dealsItem:hover {
+    transform: scale(1.03);
+  }
+
+  .dealContentText {
+    color: var(--offer-color);
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  .dealTitle {
+    margin-top: 10px;
+    font-size: 14px;
+  }
+
+  .dealContentDesc {
+    color: var(--descfont-color);
+    font-weight: 200;
+  }
+
+  .clock {
+    margin-left: 20px;
+    margin-right: 20px;
+    display: flex;
+  }
+
+  .timeDiv {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 1000px) {
+  .firstDiv {
+    width: 88%;
+  }
+
+  .dealsDiv {
+    justify-content: flex-start;
+    width: 80%;
+  }
+
+  .adBanner {
+    margin-top: 0px;
+    width: 18.3%;
+    height: 400px;
+  }
+
+  .secondDiv {
+    width: 87%;
+    /* flex-direction: column; */
+  }
 }
